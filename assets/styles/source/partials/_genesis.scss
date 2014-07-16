@@ -901,10 +901,14 @@ Site Header
 .site-header {
 	background-color: #fff;
 	padding-top: 8px;
+	border-bottom: 1px solid $brand-primary;
 	.wrap {
 		padding: 12px 0;
 		padding: 1.2rem 0;
 		position: relative;
+		.title-area {
+			float: left;
+		}
 	}
 }
 
@@ -1116,12 +1120,13 @@ Site Navigation
 --------------------------------------------- */
 
 .nav-primary {
-	position: absolute;
-	max-width: 731px;
-	max-width: 73.1rem;
+	/*position: absolute;
 	right: 0;
 	top:94px;
-	top:9.4rem
+	top:9.4rem*/
+	float:right;
+	max-width: 731px;
+	max-width: 73.1rem;
 	
 }
 
@@ -1500,55 +1505,54 @@ Site Footer
 .site-footer {
 	color:  $body-bg;
 	color: rgba($body-bg, 0.95);
+	background-color: $brand-primary;
 	text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 	padding: 40px 0;
 	padding: 4rem 0;
-	.signoff {
-		font-size: 14px;
-		font-size: 1.4rem;
-		font-weight: 300;
-		a {
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 300;
+	a {
+		color: $body-bg;
+		&:hover {
 			color: $body-bg;
-			&:hover {
-				color: $body-bg;
-				border-bottom: 1px solid rgba($body-bg,0.5);
-			}
+			border-bottom: 1px solid rgba($body-bg,0.5);
 		}
-		p {
-			margin: 42px 0;
-			margin: 4.2rem 0;
-			float: left;
-		}
-		.partner-logos {
-			float: right;
+	}
+	p {
+		margin: 42px 0;
+		margin: 4.2rem 0;
+		float: left;
+	}
+	.partner-logos {
+		float: right;
+		position: relative;
+		a {
+			text-decoration: none;
+			border: none;
+			opacity: 0.9;
 			position: relative;
-			a {
-				text-decoration: none;
-				border: none;
-				opacity: 0.9;
-				position: relative;
-				display: inline-block;
-				vertical-align:middle;
-				&.drk {
-					opacity: 0.85;
+			display: inline-block;
+			vertical-align:middle;
+			&.drk {
+				opacity: 0.85;
+			}
+			&:hover {
+				opacity: 1;
+			}
+			img {
+				margin: 0;
+				display:block;
+				&.svgpic {
+					display: none;
 				}
-				&:hover {
-					opacity: 1;
-				}
-				img {
-					margin: 0;
-					display:block;
-					&.svgpic {
+					
+				.svg & {
+					&.altbitmap {
 						display: none;
 					}
-						
-					.svg & {
-						&.altbitmap {
-							display: none;
-						}
-						&.svgpic {
-							display: block;
-						}
+					&.svgpic {
+						display: block;
 					}
 				}
 			}
@@ -1636,8 +1640,9 @@ Media Queries
 		right: auto;
 		text-align: center;
 		max-width: 100%;
-		margin-top:16px;
-		margin-top:1.6rem;
+		margin-top:32px;
+		margin-top:3.2rem;
+		float: none;
 	}
 	.genesis-nav-menu li,
 	.site-header ul.genesis-nav-menu,

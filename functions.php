@@ -50,6 +50,10 @@ function child_theme_setup() {
 	// Structural Wraps
 	add_theme_support( 'genesis-structural-wraps', array( 'header', 'nav', 'subnav', 'inner', 'footer-widgets', 'footer' ) );
 
+	// move navigation
+	remove_action( 'genesis_after_header', 'genesis_do_nav' );
+	add_action( 'genesis_header', 'genesis_do_nav' );
+	
 	// Unregister Secondary Nav Menu
 	add_theme_support( 'genesis-menus', array( 'primary' => 'Primary Navigation Menu' ) );
 
@@ -173,7 +177,7 @@ function child_theme_setup() {
 	/****************************************
 	Require Plugins
 	*****************************************/
-
+	
 	require_once( CHILD_DIR . '/lib/class-tgm-plugin-activation.php' );
 	require_once( CHILD_DIR . '/lib/theme-require-plugins.php' );
 
