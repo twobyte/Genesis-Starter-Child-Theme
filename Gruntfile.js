@@ -17,8 +17,8 @@ module.exports = function(grunt) {
                 tasks: ['jshint', 'uglify']
             },
             images: {
-                files: ['assets/images/**/*.{png,jpg,gif}'],
-                tasks: ['imagemin']
+                files: ['assets/images/**/*.{png,jpg,gif}', 'assets/images/**/*.svg'],
+                tasks: ['imagemin','svgmin']
             },
             livereload: {
                 options: { livereload: true },
@@ -93,6 +93,16 @@ module.exports = function(grunt) {
                 }]
             }
         },
+		svgmin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'assets/images/',
+                    src: ['**/*.svg'],
+                    dest: 'assets/images/'
+                }]
+            }
+        },
 
         // deploy via rsync
         deploy: {
@@ -123,6 +133,6 @@ module.exports = function(grunt) {
     grunt.renameTask('rsync', 'deploy');
 
     // register task
-    grunt.registerTask('default', ['compass', 'uglify', 'imagemin', 'watch']);
+    grunt.registerTask('default', ['compass', 'uglify', 'imagemin', 'svgmin', 'watch']);
 
 };

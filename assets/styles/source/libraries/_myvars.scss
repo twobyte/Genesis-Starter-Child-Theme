@@ -1,0 +1,48 @@
+// Variables
+//
+
+
+// This is the default html and body font-size for the base em value.
+$em-base: 10px;
+
+// We use these to control various global styles
+$body-bg: #FFFFFF;
+$body-font-color: #1d4f91; // Dk Blue
+$body-font-family: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-base: $body-font-family;
+$body-font-weight: 300;
+$body-font-style: normal;
+//** Global text color on `<body>`.
+$text-color:      $body-font-color;
+
+$brand-primary:     #1d4f91; // Dk Blue
+$brand-success:     #5cb85c;
+$brand-info:        #5bc0de;
+$brand-warning:     #f0ad4e;
+$brand-danger:      #d9534f;
+
+
+//** Global textual link color.
+$link-color:            $brand-primary;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 5%);
+
+
+$headings-font-family:    "Ubuntu";
+$headings-font-weight:    bold;
+$headings-line-height:    1.2;
+$headings-color:         $brand-primary;
+
+
+$icon-font-path: "assets/js/vendor/sass-bootstrap/fonts/";
+$fa-font-path: "assets/js/vendor/font-awesome/fonts";
+
+$grid-columns: 12;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width: 16px;
+
+
+
+
+// We use this to control font-smoothing
+$font-smoothing: antialiased !default;
