@@ -115,8 +115,9 @@ module.exports = function(grunt) {
             },
             staging: {
                 options: {
-                    dest: "~/path/to/theme",
-                    host: "user@host.com"
+                    dest: "~/public_html/ff/wp-content/themes/FF2014",
+                    host: "twobytec@twobyte.com",
+                    port: "3784"
                 }
             },
             production: {
